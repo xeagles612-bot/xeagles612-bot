@@ -4,120 +4,250 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nickolas Jason - ENC 2135 E-Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --red: #c8102e;
-    --navy: #1a2340;
-    --gold: #c8a060;
-    --gold-light: #fdf6e8;
-    --gold-border: #e8d090;
-    --red-light: #fff0f2;
-    --navy-light: #eef1f7;
-    --border: #dde4f0;
+    --navy: #1a237e;
+    --navy-light: #e8eaf6;
+    --red: #c62828;
+    --red-light: #ffebee;
+    --gold: #f57f17;
+    --gold-light: #fff8e1;
+    --border: #e0e0e0;
+    --surface: #f8f9fa;
+    --text: #202124;
+    --text-mid: #3c4043;
+    --text-light: #5f6368;
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Source Sans 3', sans-serif; background: #fff; color: var(--navy); font-size: 15px; line-height: 1.7; }
 
-  /* NAV */
-  nav { background: #fff; border-bottom: 2px solid var(--navy); padding: 0 48px; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
-  .nav-brand { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--navy); font-weight: 700; }
-  .nav-brand span { font-family: 'Source Sans 3', sans-serif; font-size: 13px; font-weight: 400; color: var(--red); margin-left: 8px; }
-  .nav-links { display: flex; gap: 4px; }
-  .nav-links button { background: none; border: 1.5px solid transparent; color: var(--navy); font-family: 'Source Sans 3', sans-serif; font-size: 14px; font-weight: 600; padding: 7px 16px; cursor: pointer; border-radius: 3px; letter-spacing: 0.3px; transition: all 0.15s; }
-  .nav-links button:hover { color: var(--red); border-color: var(--red); }
-  .nav-links button.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: #fff;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* NAV - Google Sites style */
+  nav {
+    background: var(--navy);
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  .nav-brand {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 0.3px;
+  }
+  .nav-links { display: flex; }
+  .nav-links button {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.75);
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0 16px;
+    height: 56px;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    transition: all 0.15s;
+    border-bottom: 3px solid transparent;
+  }
+  .nav-links button:hover { color: #fff; background: rgba(255,255,255,0.08); }
+  .nav-links button.active { color: #fff; border-bottom: 3px solid #fff; }
 
   /* PAGES */
   .page { display: none; }
   .page.active { display: block; }
 
-  /* HERO */
-  .hero { background: var(--navy-light); border-bottom: 1px solid var(--border); padding: 64px 48px 56px; position: relative; }
-  .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: var(--red); }
-  .hero-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 14px; padding-left: 4px; }
-  .hero h1 { font-family: 'Playfair Display', serif; font-size: 44px; color: var(--navy); line-height: 1.15; margin-bottom: 18px; max-width: 680px; padding-left: 4px; }
-  .hero p { font-size: 16px; color: #3a4f7a; line-height: 1.7; max-width: 560px; padding-left: 4px; }
+  /* BANNER - Google Sites style full-width image banner */
+  .banner {
+    background: var(--navy);
+    padding: 80px 48px 72px;
+    text-align: center;
+  }
+  .banner h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+  }
+  .banner p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.8);
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 300;
+  }
 
   /* CONTENT */
-  .content { max-width: 920px; margin: 0 auto; padding: 56px 48px; }
+  .content { max-width: 960px; margin: 0 auto; padding: 48px 32px; }
 
-  /* SECTION LABELS */
-  .sec-label { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
-  .sec-title { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--navy); margin-bottom: 8px; line-height: 1.2; }
-  .sec-desc { font-size: 15px; color: #3a4f7a; margin-bottom: 32px; max-width: 620px; }
+  /* SECTION TITLES - Google Sites style */
+  .sec-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 6px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .sec-desc {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 24px;
+    margin-top: 8px;
+  }
 
-  /* CARDS */
-  .card { background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--navy); padding: 28px 32px; margin-bottom: 20px; }
-  .card.red-top { border-top-color: var(--red); }
-  .card.accent-top { border-top-color: var(--gold); }
-  .card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
-  .card h3 { font-family: 'Playfair Display', serif; font-size: 19px; color: var(--navy); line-height: 1.3; }
-  .card h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-  .card p { font-size: 14px; color: #2a3d6a; line-height: 1.75; margin-bottom: 10px; }
+  /* CARDS - Google Sites material card style */
+  .card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .card h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .card h4 {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .card p {
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    margin-bottom: 8px;
+  }
   .card p:last-child { margin-bottom: 0; }
 
-  /* BADGES */
-  .badge { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; flex-shrink: 0; white-space: nowrap; }
-  .badge-navy { background: var(--navy); color: #fff; }
-  .badge-red { background: var(--red); color: #fff; }
-  .badge-light { background: var(--navy-light); color: var(--navy); border: 1px solid var(--border); }
-  .badge-green { background: var(--gold-light); color: var(--navy); border: 1px solid var(--gold-border); }
+  /* CHIPS/BADGES - Google Material style */
+  .chip {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .chip-navy { background: var(--navy-light); color: var(--navy); }
+  .chip-red { background: var(--red-light); color: var(--red); }
+  .chip-gold { background: var(--gold-light); color: var(--gold); }
+  .chip-done { background: #e8f5e9; color: #2e7d32; }
 
   /* PLANNING NOTES */
-  .plan { background: var(--gold-light); border: 1px solid var(--gold-border); border-left: 4px solid var(--gold); padding: 16px 20px; margin-top: 16px; }
-  .plan-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-  .plan p, .plan li { font-size: 13px; color: var(--navy); line-height: 1.7; }
+  .plan {
+    background: var(--gold-light);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 4px 4px 0;
+    padding: 14px 18px;
+    margin-top: 14px;
+  }
+  .plan-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .plan p, .plan li { font-size: 13px; color: var(--text-mid); line-height: 1.65; }
   .plan ul { padding-left: 18px; margin-top: 4px; }
-  .plan li { margin-bottom: 4px; }
+  .plan li { margin-bottom: 3px; }
 
   /* DIVIDER */
-  hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
 
   /* GRID */
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 28px; }
+  .grid-3-cell { background: #fff; padding: 20px; text-align: center; }
+  .stat-num { font-size: 32px; font-weight: 300; color: var(--red); margin-bottom: 4px; }
+  .stat-lbl { font-size: 12px; color: var(--text-light); line-height: 1.4; }
 
   /* ABOUT */
-  .about-top { display: block; margin-bottom: 40px; }
-  .avatar { width: 120px; height: 120px; background: var(--navy-light); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--navy); text-align: center; padding: 10px; line-height: 1.4; }
-  .about-name { font-family: 'Playfair Display', serif; font-size: 30px; color: var(--navy); margin-bottom: 4px; }
-  .about-sub { font-size: 13px; color: var(--red); font-weight: 600; letter-spacing: 0.3px; margin-bottom: 16px; }
-  .about-body p { font-size: 15px; color: #2a3d6a; line-height: 1.75; margin-bottom: 12px; }
+  .profile-block { display: flex; gap: 28px; align-items: flex-start; margin-bottom: 32px; }
+  .profile-name { font-size: 26px; font-weight: 400; color: var(--text); margin-bottom: 4px; }
+  .profile-sub { font-size: 13px; color: var(--navy); font-weight: 500; margin-bottom: 14px; }
+  .profile-body p { font-size: 14px; color: var(--text-mid); line-height: 1.75; margin-bottom: 10px; }
 
   /* TAGS */
   .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-  .tag { font-size: 12px; font-weight: 600; color: var(--navy); background: var(--navy-light); border: 1px solid var(--border); padding: 5px 12px; }
+  .tag { font-size: 12px; font-weight: 400; color: var(--navy); background: var(--navy-light); border-radius: 12px; padding: 4px 12px; }
 
-  /* STAT ROW */
-  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 36px; }
-  .stat-cell { background: #fff; padding: 24px 28px; text-align: center; }
-  .stat-number { font-family: 'Playfair Display', serif; font-size: 36px; color: var(--red); line-height: 1; margin-bottom: 6px; }
-  .stat-label { font-size: 12px; color: #3a4f7a; line-height: 1.4; }
-
-  /* PULL QUOTE */
-  .pull { border-left: 4px solid var(--red); padding: 12px 20px; margin: 16px 0; font-style: italic; font-size: 14px; color: var(--navy); line-height: 1.8; background: var(--red-light); }
+  /* COMPARE GRID */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0 32px; }
+  .compare-col { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .compare-label { padding: 10px 18px; font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+  .compare-label.original { background: var(--navy-light); color: var(--navy); }
+  .compare-label.revised { background: var(--red-light); color: var(--red); }
+  .letter-text { padding: 20px 22px; font-size: 13px; color: var(--text-mid); line-height: 1.8; }
+  .letter-text p { margin-bottom: 14px; }
+  .letter-text p:last-child { margin-bottom: 0; }
+  .new-para { border-left: 3px solid var(--red); padding-left: 12px; }
+  @media (max-width: 780px) { .compare-grid { grid-template-columns: 1fr; } }
 
   /* FOOTER */
-  footer { border-top: 2px solid var(--navy); padding: 24px 48px; display: flex; align-items: center; justify-content: space-between; margin-top: 60px; background: var(--navy-light); }
-  footer p { font-size: 12px; color: #3a4f7a; }
-  .footer-brand { font-family: 'Playfair Display', serif; font-size: 14px; color: var(--navy); font-weight: 700; }
+  footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 48px;
+  }
+  footer p { font-size: 12px; color: var(--text-light); }
+  .footer-name { font-size: 13px; font-weight: 500; color: var(--text-mid); }
 
   @media (max-width: 680px) {
-    nav { padding: 0 20px; }
-    .hero { padding: 48px 24px 40px; }
-    .hero h1 { font-size: 30px; }
-    .content { padding: 36px 24px; }
+    nav { padding: 0 16px; }
+    .banner { padding: 48px 24px; }
+    .banner h1 { font-size: 30px; }
+    .content { padding: 32px 20px; }
     .grid-2 { grid-template-columns: 1fr; }
-    .about-top { grid-template-columns: 1fr; }
-    .stat-row { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 8px; text-align: center; }
+    .grid-3 { grid-template-columns: 1fr; }
+    .profile-block { flex-direction: column; }
+    footer { flex-direction: column; gap: 6px; text-align: center; }
   }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-brand">Nickolas Jason <span>ENC 2135 · Spring 2026</span></div>
+  <div class="nav-brand">Nickolas Jason</div>
   <div class="nav-links">
     <button class="active" onclick="showPage('about',this)">About Me</button>
     <button onclick="showPage('projects',this)">Projects</button>
@@ -126,57 +256,57 @@
   </div>
 </nav>
 
+
 <!-- ABOUT -->
 <div class="page active" id="page-about">
-  <div class="hero">
-    <div class="hero-eyebrow">ENC 2135 · E-Portfolio · Spring 2026</div>
-    <h1>Writing Across Genres, Audiences, and Media</h1>
-    <p>A collection of work from ENC 2135 at Florida State University, demonstrating the development of rhetorical awareness, genre composition, and audience-centered writing.</p>
+  <div class="banner">
+    <h1>ENC 2135 E-Portfolio</h1>
+    <p>A collection of writing and composition work from Florida State University, Spring 2026</p>
   </div>
   <div class="content">
-    <div class="about-top">
-      <div class="about-body">
-        <div class="about-name">Nickolas Jason</div>
-        <div class="about-sub">Florida State University · Biological Sciences · Spring 2026</div>
+    <div class="profile-block">
+      <div class="profile-body">
+        <div class="profile-name">Nickolas Jason</div>
+        <div class="profile-sub">Florida State University &nbsp;·&nbsp; Biological Sciences &nbsp;·&nbsp; Spring 2026</div>
         <p>A few sentences about myself, my background in Biological Sciences, and what drew me to researching CTE for this course.</p>
         <p>What I hope this portfolio shows about how I grew as a writer this semester.</p>
       </div>
     </div>
+
     <hr>
-    <div class="sec-label">What's Inside</div>
+
     <div class="sec-title">How This Portfolio Is Organized</div>
-    <div class="sec-desc">Four pages document different aspects of the writing work completed in ENC 2135. Use the navigation above to move between them.</div>
+    <div class="sec-desc">Four pages document different aspects of the writing work completed in ENC 2135.</div>
+
     <div class="grid-2">
       <div class="card">
-        <div class="sec-label">Projects</div>
-        <h4>Major Writing Projects</h4>
+        <div class="sec-title" style="font-size:15px; border:none; padding:0; margin-bottom:8px;">Projects</div>
         <p>The Investigative Field Essay on CTE and the Multigenre Persuasive Campaign - three artifacts across different genres targeting two distinct audiences.</p>
       </div>
-      <div class="card red-top">
-        <div class="sec-label">Revisions</div>
-        <h4>Global Revision</h4>
+      <div class="card">
+        <div class="sec-title" style="font-size:15px; border:none; padding:0; margin-bottom:8px;">Revisions</div>
         <p>A side-by-side comparison of the original open letter and a globally revised version, plus two additional compositions from the semester.</p>
       </div>
-      <div class="card accent-top">
-        <div class="sec-label">Compositions</div>
-        <h4>Additional Work</h4>
-        <p>Two smaller pieces from in-class and homework assignments showing specific moments of skill development across the semester.</p>
+      <div class="card">
+        <div class="sec-title" style="font-size:15px; border:none; padding:0; margin-bottom:8px;">Compositions</div>
+        <p>Two smaller pieces from in-class and homework assignments showing moments of skill development across the semester.</p>
       </div>
       <div class="card">
-        <div class="sec-label">Reflection</div>
-        <h4>1,000-Word Reflective Statement</h4>
-        <p>A reflection on the rhetorical concepts and writing skills developed in this course and how they apply to future academic and professional contexts.</p>
+        <div class="sec-title" style="font-size:15px; border:none; padding:0; margin-bottom:8px;">Reflection</div>
+        <p>A reflective statement on the rhetorical concepts and writing skills developed in this course and how they apply to future contexts.</p>
       </div>
     </div>
+
     <div class="plan">
       <div class="plan-label">Still to add</div>
       <ul>
-        <li>Fill in my personal intro paragraph above</li>
-        <li>Add my photo once I have one ready</li>
-        <li>Update the skill tags to reflect what I actually focused on this semester</li>
+        <li>Fill in my personal intro paragraphs above</li>
+        <li>Add my photo once ready</li>
+        <li>Update skill tags below to reflect this semester</li>
       </ul>
     </div>
-    <div class="tags">
+
+    <div class="tags" style="margin-top:20px;">
       <span class="tag">Genre Analysis</span>
       <span class="tag">Rhetorical Awareness</span>
       <span class="tag">Audience Targeting</span>
@@ -188,31 +318,33 @@
     </div>
   </div>
   <footer>
-    <div class="footer-brand">Nickolas Jason - ENC 2135 E-Portfolio</div>
+    <div class="footer-name">Nickolas Jason - ENC 2135 E-Portfolio</div>
     <p>Prof. Adam Kramer &nbsp;·&nbsp; Florida State University &nbsp;·&nbsp; Spring 2026</p>
   </footer>
 </div>
 
+
 <!-- PROJECTS -->
 <div class="page" id="page-projects">
-  <div class="hero">
-    <div class="hero-eyebrow">Projects</div>
-    <h1>Major Course Projects</h1>
-    <p>Two projects examining CTE and NFL player health - first through research and investigation, then through a persuasive multigenre campaign targeting two distinct audiences.</p>
+  <div class="banner">
+    <h1>Projects</h1>
+    <p>Major writing projects completed in ENC 2135, focusing on CTE and NFL player health</p>
   </div>
   <div class="content">
-    <div class="sec-label">Project 1</div>
-    <div class="sec-title">Investigative Field Essay</div>
-    <div class="sec-desc">A research-based essay examining Chronic Traumatic Encephalopathy (CTE) and its impact on former NFL players, written for the sports medicine discourse community.</div>
-    <div class="stat-row">
-      <div class="stat-cell"><div class="stat-number">99%</div><div class="stat-label">of donated NFL player brains studied showed CTE</div></div>
-      <div class="stat-cell"><div class="stat-number">300+</div><div class="stat-label">former NFL players posthumously diagnosed</div></div>
-      <div class="stat-cell"><div class="stat-number">0</div><div class="stat-label">approved tests to diagnose CTE in living patients</div></div>
+
+    <div class="sec-title">Project 1 - Investigative Field Essay</div>
+    <div class="sec-desc">A research-based essay examining CTE and its impact on former NFL players, written for the sports medicine discourse community.</div>
+
+    <div class="grid-3">
+      <div class="grid-3-cell"><div class="stat-num">99%</div><div class="stat-lbl">of donated NFL player brains studied showed CTE</div></div>
+      <div class="grid-3-cell"><div class="stat-num">300+</div><div class="stat-lbl">former NFL players posthumously diagnosed</div></div>
+      <div class="grid-3-cell"><div class="stat-num">0</div><div class="stat-lbl">approved tests to diagnose CTE in living patients</div></div>
     </div>
+
     <div class="card">
       <div class="card-header">
         <h3>CTE and Its Impact on Former Football Players</h3>
-        <span class="badge badge-navy">IFE</span>
+        <span class="chip chip-navy">IFE</span>
       </div>
       <p><strong>Topic:</strong> Chronic Traumatic Encephalopathy - its causes, symptoms, diagnosis challenges, and long-term neurological effects on former NFL players.</p>
       <p><strong>Audience:</strong> Sports medicine researchers, medical professionals, and public health advocates within the sports medicine discourse community.</p>
@@ -221,93 +353,121 @@
         <div class="plan-label">Still to add</div>
         <ul>
           <li>Embedding or linking my final IFE PDF here</li>
-          <li>A short paragraph on how my IFE research shaped the argument I made in Project 2</li>
+          <li>A short paragraph on how my IFE research shaped the argument in Project 2</li>
           <li>A list of my primary sources</li>
         </ul>
       </div>
     </div>
+
     <hr>
-    <div class="sec-label">Project 2</div>
-    <div class="sec-title">Multigenre Persuasive Campaign</div>
-    <div class="sec-desc">Three artifacts in different genres arguing that the NFL must significantly increase funding for CTE research, targeting two distinct audiences.</div>
-    <div class="card red-top" style="margin-bottom:16px;">
+
+    <div class="sec-title">Project 2 - Multigenre Persuasive Campaign</div>
+    <div class="sec-desc">Three artifacts in different genres arguing that the NFL must increase funding for CTE research, targeting two distinct audiences.</div>
+
+    <div class="card" style="margin-bottom:12px;">
       <div class="card-header">
         <h3>Artifact 1 - Open Letter</h3>
-        <span class="badge badge-red">Complete</span>
+        <span class="chip chip-done">Complete</span>
       </div>
       <p><strong>Genre:</strong> Formal open letter &nbsp;·&nbsp; <strong>Audience:</strong> NFL executives and team owners</p>
       <p><strong>Medium:</strong> Linguistic/textual - suitable for publication in a major sports outlet such as ESPN or The Athletic</p>
-      <p>A four-paragraph letter to Commissioner Roger Goodell and team owners arguing that the league's financial resources create both the ability and the obligation to fund independent CTE research. Primary appeals: ethos and logos, grounded in the Mez et al. (2017) JAMA study and NFL revenue data.</p>
+      <p>A four-paragraph letter to Commissioner Goodell and team owners arguing that the league's financial resources create both the ability and the obligation to fund independent CTE research. Primary appeals: ethos and logos, grounded in the Mez et al. (2017) JAMA study and NFL revenue data.</p>
     </div>
-    <div class="card red-top" style="margin-bottom:16px;">
+
+    <div class="card" style="margin-bottom:12px;">
       <div class="card-header">
         <h3>Artifact 2 - Infographic</h3>
-        <span class="badge badge-red">Complete</span>
+        <span class="chip chip-done">Complete</span>
       </div>
       <p><strong>Genre:</strong> Infographic &nbsp;·&nbsp; <strong>Audience:</strong> General public and sports fans</p>
       <p><strong>Medium:</strong> Visual and linguistic - designed for social media distribution (Instagram, Twitter/X, Facebook)</p>
       <p>A single-page visual presenting key CTE statistics, a brief disease explanation, affected players, and a call to action. Primary appeal: pathos - the contrast between the NFL's $20 billion in revenue and its research investment is designed to provoke a sense of injustice and motivate sharing.</p>
     </div>
-    <div class="card red-top">
+
+    <div class="card">
       <div class="card-header">
         <h3>Artifact 3 - PSA Script</h3>
-        <span class="badge badge-red">Complete</span>
+        <span class="chip chip-done">Complete</span>
       </div>
       <p><strong>Genre:</strong> Public Service Announcement script &nbsp;·&nbsp; <strong>Audience:</strong> General public and sports fans</p>
       <p><strong>Medium:</strong> Linguistic, audial, and visual - intended for broadcast television or online video</p>
-      <p>A short video script using a fictionalized former player's story to create emotional investment before delivering statistics and a call to action. Works alongside the infographic to reach the same audience through a different emotional and sensory register.</p>
+      <p>A short video script using a fictionalized former player's story to create emotional investment before delivering statistics and a call to action.</p>
       <div class="plan">
         <div class="plan-label">Still to add</div>
         <ul>
           <li>Linking my Project 2 Word doc and infographic PDF here</li>
           <li>Full text of each artifact or links to individual pages</li>
-          <li>A short note on why I chose the two-audience structure</li>
         </ul>
       </div>
     </div>
+
   </div>
   <footer>
-    <div class="footer-brand">Nickolas Jason - ENC 2135 E-Portfolio</div>
+    <div class="footer-name">Nickolas Jason - ENC 2135 E-Portfolio</div>
     <p>Prof. Adam Kramer &nbsp;·&nbsp; Florida State University &nbsp;·&nbsp; Spring 2026</p>
   </footer>
 </div>
 
+
 <!-- REVISIONS -->
 <div class="page" id="page-revisions">
-  <div class="hero">
-    <div class="hero-eyebrow">Revisions & Compositions</div>
-    <h1>Global Revision & Additional Work</h1>
-    <p>A substantive revision of the open letter showing changes beyond grammar, plus two compositions demonstrating skill development across the semester.</p>
+  <div class="banner">
+    <h1>Revisions</h1>
+    <p>Global revision of my open letter artifact and two additional compositions</p>
   </div>
   <div class="content">
-    <div class="sec-label">Global Revision</div>
+
     <div class="sec-title">Open Letter - Original vs. Revised</div>
-    <div class="sec-desc">The revision focuses on structure, counterargument, and evidence integration. Both versions will appear side by side in the final portfolio.</div>
-    <div class="card">
-      <div class="card-header">
-        <h3>What Is Being Revised and Why</h3>
-        <span class="badge badge-navy">Artifact 1</span>
+    <div class="sec-desc">My revision added a counterargument paragraph, strengthened the transition between the science and financial arguments, and sharpened the closing with a specific action step.</div>
+
+    <div class="card" style="margin-bottom:16px;">
+      <p><strong>What I changed and why:</strong> The original letter never acknowledged that the NFL has already taken some steps on player safety - something the audience would immediately think of. I added a counterargument paragraph that acknowledges the existing concussion settlement, then explains why it falls short of what dedicated research funding would accomplish. I also tightened the transition between paragraphs and closed with a specific ask rather than a vague call to act.</p>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-col">
+        <div class="compare-label original">Original</div>
+        <div class="letter-text">
+          <p>Nickolas Jason<br>Tallahassee, FL<br>nrjason06@gmail.com</p>
+          <p>March 2026</p>
+          <p>Roger Goodell, Commissioner<br>National Football League<br>345 Park Avenue<br>New York, NY 10154</p>
+          <p>Dear Commissioner Goodell and NFL Team Owners,</p>
+          <p>Every Sunday, millions of Americans watch NFL players perform at the highest levels of human athleticism. What most fans do not see - and what too many players and their families have only learned after it was too late - is the silent, accumulating damage taking place inside those players' brains. Chronic Traumatic Encephalopathy, or CTE, is a progressive neurodegenerative disease linked to repetitive head trauma. It has been found in the posthumous brains of more than 300 former NFL players, including Junior Seau, Mike Webster, and Dave Duerson. It cannot be diagnosed in living patients. And the funding allocated to understanding, detecting, and preventing it remains woefully insufficient given the resources and moral responsibility of this league.</p>
+          <p>The science is not in dispute. A landmark study published in the Journal of the American Medical Association examined 111 donated brains of former NFL players and found evidence of CTE in 110 of them - a rate of 99 percent (Mez et al., 2017). Researchers at Boston University's CTE Center have spent two decades documenting the devastating consequences of the disease: memory loss, impulse control disorders, severe depression, and dementia. Despite these findings, no reliable method yet exists to diagnose CTE in living patients. Without a living diagnostic, players cannot receive timely treatment, families cannot plan, and the league cannot be held medically accountable.</p>
+          <p>The financial argument is straightforward. The NFL generated over $20 billion in revenue in 2023 alone. The league's existing concussion settlement with former players, while significant in scale, was structured around compensating past harm rather than investing in the science needed to prevent future harm. A dedicated, independently administered CTE research fund would represent a fraction of annual revenue while potentially transforming the medical landscape for every player currently on an NFL roster.</p>
+          <p>I am not writing to assign blame for what has already happened. I am writing because what happens next is still a choice. The men who play this game deserve the full force of this institution's resources directed at understanding what the game does to their brains. Fund the research that could one day allow a player to be diagnosed while still alive, receive treatment while there is still time, and make genuinely informed decisions about their own health and future.</p>
+          <p>The players gave everything to this league. The least this league can do is give something meaningful back.</p>
+          <p>Respectfully,<br>Nickolas Jason</p>
+        </div>
       </div>
-      <p><strong>Original artifact:</strong> Open Letter to NFL Executives and Team Owners (Project 2)</p>
-      <p><strong>Reason for selection:</strong> The open letter is the most argument-driven artifact and has the clearest opportunities for meaningful global revision. Two weaknesses identified: the letter does not anticipate the audience's likely resistance, and the transition between the science paragraph and the financial argument is abrupt.</p>
-      <div class="plan">
-        <div class="plan-label">Planned Global Revisions</div>
-        <ul>
-          <li><strong>Add a counterargument paragraph</strong> - acknowledge the NFL's existing concussion protocols and settlement, then explain why those fall short of what independent research funding would accomplish</li>
-          <li><strong>Strengthen transitions</strong> - make the logical move from "here is what we know" to "here is what you have the power to do" explicit rather than implied</li>
-          <li><strong>Sharpen the closing</strong> - name a specific concrete action rather than a general call to act</li>
-          <li><strong>Side-by-side layout</strong> - final website will display original and revised text in two columns so changes are visible at a glance</li>
-        </ul>
+
+      <div class="compare-col">
+        <div class="compare-label revised">Revised</div>
+        <div class="letter-text">
+          <p>Nickolas Jason<br>Tallahassee, FL<br>nrjason06@gmail.com</p>
+          <p>March 2026</p>
+          <p>Roger Goodell, Commissioner<br>National Football League<br>345 Park Avenue<br>New York, NY 10154</p>
+          <p>Dear Commissioner Goodell and NFL Team Owners,</p>
+          <p>Every Sunday, millions of Americans watch NFL players perform at the highest levels of human athleticism. What most fans do not see - and what too many players and their families have only learned after it was too late - is the silent, accumulating damage taking place inside those players' brains. Chronic Traumatic Encephalopathy, or CTE, is a progressive neurodegenerative disease linked to repetitive head trauma. It has been found in the posthumous brains of more than 300 former NFL players, including Junior Seau, Mike Webster, and Dave Duerson. It cannot be diagnosed in living patients. And the funding allocated to understanding, detecting, and preventing it remains woefully insufficient given the resources and moral responsibility of this league.</p>
+          <p>The science is not in dispute. A landmark study published in the Journal of the American Medical Association examined 111 donated brains of former NFL players and found evidence of CTE in 110 of them - a rate of 99 percent (Mez et al., 2017). Researchers at Boston University's CTE Center have spent two decades documenting the devastating consequences of the disease: memory loss, impulse control disorders, severe depression, and dementia. Despite these findings, no reliable method yet exists to diagnose CTE in living patients. Without a living diagnostic, players cannot receive timely treatment, families cannot plan, and the full scope of the disease cannot be understood.</p>
+          <p class="new-para">I recognize that the NFL has already taken steps in this space. The league's concussion protocol and the 2013 settlement with former players represent real acknowledgments of the problem. But a settlement that compensates past harm is not the same as funding the science that prevents future harm. Most of that money went to legal costs and individual claims - not to independent research labs working to develop a living diagnostic test. Acknowledging that CTE is a problem and investing in solving it are two very different things, and so far the league has done far more of the former than the latter.</p>
+          <p class="new-para">That gap matters because the science is solvable - but only with sustained, independent funding. The NFL generated over $20 billion in revenue in 2023. A dedicated CTE research fund of even $100 million annually - less than one percent of revenue - would represent a transformational investment in the Boston University CTE Center and similar institutions. It would be structured independently of league interests, administered by leading neuroscientists, and directed specifically at developing a living diagnostic test and identifying treatment pathways.</p>
+          <p>I am not writing to assign blame for what has already happened. I am writing because what happens next is still a choice. The men who play this game deserve the full force of this institution's resources directed at understanding what the game does to their brains. I am asking the NFL to commit to a dedicated, independently run CTE research fund - a concrete financial commitment, not a protocol revision or a settlement payment, but science funding that outlasts any single legal agreement.</p>
+          <p>The players gave everything to this league. It is time the league gave something lasting back.</p>
+          <p>Respectfully,<br>Nickolas Jason</p>
+        </div>
       </div>
     </div>
+
     <hr>
-    <div class="sec-label">Additional Compositions</div>
+
     <div class="sec-title">Two Compositions of My Own Design</div>
-    <div class="sec-desc">Two pieces from non-graded and in-class work selected to show the development of specific skills across the semester.</div>
-    <div class="card accent-top" style="margin-bottom:16px;">
+    <div class="sec-desc">Two pieces from non-graded and in-class work showing the development of specific skills across the semester.</div>
+
+    <div class="card" style="margin-bottom:12px;">
       <div class="card-header">
         <h3>Composition 1 - Genre Analysis Exercise</h3>
-        <span class="badge badge-light">In-Class Work</span>
+        <span class="chip chip-navy">In-Class Work</span>
       </div>
       <p><strong>From:</strong> Week 7 in-class activity - rhetorical situation analysis of the HIV/AIDS Memorial Quilt</p>
       <p><strong>Skill demonstrated:</strong> Applying the rhetorical situation framework - context, audience, exigence, purpose, genre - to a real-world artifact. This was one of the first exercises where I practiced breaking down why a genre works for a specific situation, a skill that directly shaped every genre choice in Project 2.</p>
@@ -319,10 +479,11 @@
         </ul>
       </div>
     </div>
-    <div class="card accent-top">
+
+    <div class="card">
       <div class="card-header">
         <h3>Composition 2 - Rhetorical Rationale Discussion Post</h3>
-        <span class="badge badge-green">Discussion Board</span>
+        <span class="chip chip-gold">Discussion Board</span>
       </div>
       <p><strong>From:</strong> 250-word discussion board post - rhetorical rationale for the infographic genre</p>
       <p><strong>Skill demonstrated:</strong> Reflecting on genre conventions, constraints, and affordances in my own writing. This required stepping back from composing to think critically about choices - a metacognitive skill central to stronger writing in any field.</p>
@@ -330,50 +491,42 @@
         <div class="plan-label">Still to add</div>
         <ul>
           <li>The full text of my discussion post</li>
-          <li>A short note on what I would expand if I were writing it as a longer rationale</li>
+          <li>A short note on what I would expand if writing it as a longer rationale</li>
           <li>A connection to how this post developed into the full rhetorical rationale in Project 2</li>
         </ul>
       </div>
     </div>
+
   </div>
   <footer>
-    <div class="footer-brand">Nickolas Jason - ENC 2135 E-Portfolio</div>
+    <div class="footer-name">Nickolas Jason - ENC 2135 E-Portfolio</div>
     <p>Prof. Adam Kramer &nbsp;·&nbsp; Florida State University &nbsp;·&nbsp; Spring 2026</p>
   </footer>
 </div>
 
+
 <!-- REFLECTION -->
 <div class="page" id="page-reflection">
-  <div class="hero">
-    <div class="hero-eyebrow">Reflective Statement</div>
-    <h1>What I Learned and How I'll Use It</h1>
-    <p>A 1,000-word reflection on the skills developed in ENC 2135, how they shaped this portfolio's revision, and how they carry forward into future work.</p>
+  <div class="banner">
+    <h1>Reflective Statement</h1>
+    <p>What I learned in ENC 2135 and how I will use it going forward</p>
   </div>
   <div class="content">
-    <div class="sec-label">Concept Focus</div>
+
     <div class="sec-title">Audience Awareness as a Rhetorical Skill</div>
-    <div class="sec-desc">The reflective statement centers on audience awareness - how understanding who you are writing for changes every decision you make as a writer.</div>
+    <div class="sec-desc">Focusing on how understanding who you are writing for changes every decision you make as a writer.</div>
+
     <div class="card">
-      <div class="plan" style="margin-bottom:24px;">
-        <div class="plan-label">Still to write - coming in final draft</div>
-        <ul>
-          <li><strong>Concept I am focusing on:</strong> Audience awareness and how it shapes genre, tone, evidence, and medium</li>
-          <li><strong>Connection to my revision:</strong> Adding the counterargument paragraph to the open letter came from thinking harder about my audience and their likely resistance</li>
-          <li><strong>How I will use this going forward:</strong> In Biological Sciences and future health fields, writing for patients, physicians, and policymakers all require the same rhetorical thinking I practiced in this course</li>
-          <li>Final version will be at least 1,000 words, Times New Roman 12pt double-spaced</li>
-        </ul>
-      </div>
-      <h4>Planned Opening Paragraph</h4>
-      <div class="pull">Before this course, I thought of writing as something you did in one voice for one reader - usually a professor grading a paper. What ENC 2135 changed was my understanding that every piece of writing exists inside a rhetorical situation, and that situation determines almost everything: who you are addressing, what genre fits that audience, what appeals will land, and what the writing is supposed to make someone do...</div>
-      <h4 style="margin-top:20px; margin-bottom:12px;">Planned Section Structure</h4>
-      <p><strong>1. The concept: Audience awareness</strong> - Define the term and trace when I first encountered it through the rhetorical situation slides in Week 7.</p>
-      <p><strong>2. How I applied it in Project 2</strong> - Walk through the decision to write three genres for two audiences, with specific examples of how audience changed tone, evidence, and medium in each artifact.</p>
-      <p><strong>3. How it shaped my revision</strong> - The counterargument paragraph added to the open letter came directly from thinking harder about who was reading it and what they would object to.</p>
-      <p><strong>4. How I will use it in the future</strong> - In pre-med and clinical settings, communicating about health topics requires translating the same information for completely different readers: patients need plain language, physicians need clinical precision, policymakers need cost-benefit framing. The rhetorical tools from this course apply directly.</p>
+      <p>Prior to enrolling in ENC 2135, I believed that writing had a single version - you wrote it, submitted it, and that was it. The notion that a piece of writing could be essentially reorganized in light of a more profound insight into who was reading it was not something I had been previously requested to do. What this course transformed was that I now realize that audience is not a box to be checked on an assignment sheet. The main decision that influences all the others is the genre you write in, the tone you write in, the evidence you emphasize on, and the manner in which you conclude. The most transferable thing I learned this semester has been learning to think rhetorically about audience and this is what I concentrated on when I returned to revise my open letter to include in this portfolio.</p>
+      <p>My initial real awareness of the concept of audience awareness as an effective tool occurred in Week 7, when we examined the HIV/AIDS Memorial Quilt as a rhetorical artifact. The quilt was not a letter, not a speech, not a petition - it was a tangible item constructed of pieces of fabric that were sewn together by families who had lost loved ones. What was rhetorically effective was that it fitted its audience perfectly. It was placed in Washington D.C., before the Capitol, at a time when policymakers were the target audience that had to be moved. It was an unanticipated and heartfelt genre that a written argument could never be and due to that it succeeded. That exercise was the first time that I considered genre as something that is not a form to be filled in but a choice that is made with a purpose.</p>
+      <p>I brought that thought into Project 2. I decided to write an open letter to NFL executives because I carefully thought about who these people are and what type of communication they care about. Neither will they be convinced by a post on Instagram. They are involved in formal communication, legal documents, and policy proposals. Their language is an open letter, one that may be published in a big sports paper. In deciding on an infographic to present to the general audience, it was the reverse rationale - this group is not going to read a four-paragraph argument, but they will pause to scroll to a statistic that will shock them. All the genre decisions in the campaign boiled down to one question: what will ever get to this person, considering who he is and where he spends his time?</p>
+      <p>In revising the open letter to include this portfolio, audience awareness was once again the motivation factor. As I read it back, I have to admit that I had overlooked the most obvious objection the audience would have; that NFL has already done something about this. Concussion settlement. There are protocols. Any executive, who had read my original letter, would have thought of that at once, and since I had never referred to it, the letter was one-sided. The updated version recognizes such efforts that are in place and then justifies why they are not effective enough. That one addition helped to make the whole argument more powerful since it demonstrated to the audience that I knew their side before telling them to switch sides.</p>
+      <p>Being a Biological Sciences major, I will continue with the rest of my academic and professional life to communicate on complex issues with people who possess very different degrees of expertise. A patient does not require the same explanation that a physician provides. The same framing is not required of a policymaker as it is of a researcher. This skill of recognizing an audience, knowing what they already know and believe, and the selection of the genre and evidence that will actually reach them is not just a writing skill - it is a thinking skill. That is what ENC 2135 provided me with, and that is what I will apply in all the courses and career situations that will occur in the future.</p>
     </div>
+
   </div>
   <footer>
-    <div class="footer-brand">Nickolas Jason - ENC 2135 E-Portfolio</div>
+    <div class="footer-name">Nickolas Jason - ENC 2135 E-Portfolio</div>
     <p>Prof. Adam Kramer &nbsp;·&nbsp; Florida State University &nbsp;·&nbsp; Spring 2026</p>
   </footer>
 </div>
